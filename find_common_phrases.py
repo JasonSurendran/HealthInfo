@@ -122,11 +122,7 @@ def save_similarity_results(results, output_file):
             file.write(f"{result['Document 1']} - {result['Document 2']}: {result['Cosine Similarity']:.4f}\n")
 
 
-def run():
-    directory = "./documents_filtered"
-    words_output_file = "output_files/common_words_filtered.txt"
-    similarity_output_file = "output_files/document_similarity.txt"
-
+def run(directory, words_output_file, similarity_output_file):
     # Load documents and find common words and similarity
     documents = load_documents(directory)
     similarity_results, common_words_ranked = find_common_words_and_similarity(documents)

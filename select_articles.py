@@ -120,11 +120,7 @@ def save_ndcg_to_file(output_file, ndcg_score):
     print(f"nDCG@10 score saved to {output_file}.")
 
 
-def run():
-    # Directories
-    src_directory = "./documents"
-    dest_directory = "./documents_filtered"
-
+def run(src_directory, dest_directory):
     # Load documents
     documents, filenames = load_documents_from_directory(src_directory)
 
@@ -166,5 +162,3 @@ def run():
 
     print(f"Filtering complete. Documents with scores >= {threshold} moved to {dest_directory}.")
 
-if __name__ == "__main__":
-    run()
