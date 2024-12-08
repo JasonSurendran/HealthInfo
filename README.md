@@ -1,4 +1,4 @@
-### How To Use Software
+# How To Use Software
 
 ## Install Dependencies
 1.  Create a virtual environment with 
@@ -20,9 +20,9 @@
 2. All output files are added to 'output_files' folder for reference.
 2. Navigate over to http://127.0.0.1:8050/ to see dashboard
 
-### How Is Software Implemented
+# How Is Software Implemented
 
-### Articles Used
+# Articles Prepopulated For Example
 1. https://www.who.int/news-room/fact-sheets/detail/healthy-diet
 2. https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eight-tips-for-healthy-eating/
 3. https://www.mayoclinic.org/healthy-lifestyle/weight-loss/in-depth/weight-loss/art-20048466
