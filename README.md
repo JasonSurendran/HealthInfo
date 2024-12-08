@@ -22,6 +22,22 @@
 
 # How Is Software Implemented
 
+./documents
+
+./documents_filtered
+
+./output_files
+
+display_dashboard.py
+
+find_common_phrases.py
+
+main.py
+
+requirements.txt
+
+select_articles.py
+
 # Articles Prepopulated For Example
 1. https://www.who.int/news-room/fact-sheets/detail/healthy-diet
 2. https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eight-tips-for-healthy-eating/
