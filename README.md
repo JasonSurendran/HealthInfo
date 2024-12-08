@@ -1,5 +1,7 @@
+### How To Use Software
+
 ## Install Dependencies
-1.  Create  a virtual environment with 
+1.  Create a virtual environment with 
 ```python -m venv myenv  # Replace "myenv" with your desired environment name```
 2. Activate the virtual environment: 
 	a. On Windows
@@ -9,14 +11,18 @@
 3. Install requirements:
 ```pip install -r requirements.txt```
 
+## Add New Documents (Optional As Documents Already Provided)
+1. Add text in the 'documents' folder in a .txt format (see current documents in folder for example)
+2. 15 documents are already populated into folder, so you can skip over to 'Run Program' section of the README.md
+
 ## Run Program
 1. ```python main.py```
+2. All output files are added to 'output_files' folder for reference.
+2. Navigate over to http://127.0.0.1:8050/ to see dashboard
 
-## TO DO
-How To Use Software
-How Is Software Implemented
+### How Is Software Implemented
 
-## Articles Used
+### Articles Used
 1. https://www.who.int/news-room/fact-sheets/detail/healthy-diet
 2. https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eight-tips-for-healthy-eating/
 3. https://www.mayoclinic.org/healthy-lifestyle/weight-loss/in-depth/weight-loss/art-20048466
