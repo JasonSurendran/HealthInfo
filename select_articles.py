@@ -3,6 +3,7 @@ import math
 from collections import Counter
 import shutil
 
+
 class BM25:
     def __init__(self, documents, k1=1.5, b=0.75):
         """
@@ -59,11 +60,12 @@ class BM25:
             scores.append(score)
         return scores
 
+
 def load_documents_from_directory(directory):
     """
     Load all text files from a given directory.
     :param directory: Path to the directory containing text files.
-    :return: List of document contents as strings.
+    :return: List of document contents as strings and their filenames.
     """
     documents = []
     filenames = []
@@ -74,6 +76,7 @@ def load_documents_from_directory(directory):
                 documents.append(file.read())
                 filenames.append(filename)
     return documents, filenames
+
 
 def copy_relevant_documents(filenames, scores, threshold, src_dir, dest_dir):
     """
@@ -93,6 +96,30 @@ def copy_relevant_documents(filenames, scores, threshold, src_dir, dest_dir):
             shutil.copy(src_path, dest_path)
             print(f"Copied: {filename} with score {score:.4f}")
 
+
+def ndcg_at_k(relevance_scores, k=10):
+    """
+    Calculate nDCG@k.
+    :param relevance_scores: List of relevance scores.
+    :param k: Rank cutoff.
+    :return: nDCG@k score.
+    """
+    relevance_scores = relevance_scores[:k]
+    dcg = sum(rel / math.log2(idx + 2) for idx, rel in enumerate(relevance_scores))
+    ideal_relevance = sorted(relevance_scores, reverse=True)
+    idcg = sum(rel / math.log2(idx + 2) for idx, rel in enumerate(ideal_relevance[:k]))
+    return dcg / idcg if idcg > 0 else 0
+
+
+def save_ndcg_to_file(output_file, ndcg_score):
+    """
+    Save the nDCG@10 score to a text file.
+    """
+    with open(output_file, 'w', encoding='utf-8') as file:
+        file.write(f"nDCG@10: {ndcg_score:.4f}\n")
+    print(f"nDCG@10 score saved to {output_file}.")
+
+
 def run():
     # Directories
     src_directory = "./documents"
@@ -100,9 +127,12 @@ def run():
 
     # Load documents
     documents, filenames = load_documents_from_directory(src_directory)
-    
+
     # Query
     query = ["diet", "exercise", "health"]
+
+    # User-provided relevance scores (example: ground truth relevance for each document)
+    relevance_scores = [10, 8, 6, 5, 3]  # Adjust this to reflect actual relevance of documents
 
     # Initialize BM25
     bm25 = BM25(documents)
@@ -110,17 +140,31 @@ def run():
     # Compute scores
     scores = bm25.compute_bm25(query)
 
-    # Threshold for filtering
-    threshold = 1.5
-
     # Rank documents
-    ranked_docs = sorted(zip(scores, filenames, documents), reverse=True, key=lambda x: x[0])
+    ranked_docs = sorted(zip(scores, filenames, documents, relevance_scores), reverse=True, key=lambda x: x[0])
 
     print("Ranked Documents:")
-    for score, filename, doc in ranked_docs:
-        print(f"Score: {score:.4f}, Filename: {filename}")
+    for score, filename, doc, rel in ranked_docs:
+        print(f"Score: {score:.4f}, Filename: {filename}, Relevance: {rel}")
+
+    # Extract ranked relevance scores for nDCG calculation
+    ranked_relevance = [rel for _, _, _, rel in ranked_docs]
+
+    # Calculate nDCG@10
+    ndcg_score = ndcg_at_k(ranked_relevance, k=10)
+    print(f"nDCG@10: {ndcg_score:.4f}")
+
+    # Save nDCG score to file
+    ndcg_output_file = "output_files/ndcg_score.txt"
+    save_ndcg_to_file(ndcg_output_file, ndcg_score)
+
+    # Threshold for filtering
+    threshold = 1.5
 
     # Copy relevant documents
     copy_relevant_documents(filenames, scores, threshold, src_directory, dest_directory)
 
     print(f"Filtering complete. Documents with scores >= {threshold} moved to {dest_directory}.")
+
+if __name__ == "__main__":
+    run()

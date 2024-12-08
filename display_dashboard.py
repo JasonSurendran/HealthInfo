@@ -31,8 +31,8 @@ def load_similarity_results(input_file):
 
 
 # Load data
-common_words_file = "common_words_filtered.txt"
-similarity_file = "document_similarity.txt"
+common_words_file = "output_files/common_words_filtered.txt"
+similarity_file = "output_files/document_similarity.txt"
 
 common_words_df = load_common_words(common_words_file)
 similarity_df = load_similarity_results(similarity_file)

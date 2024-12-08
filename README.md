@@ -12,6 +12,10 @@
 ## Run Program
 1. ```python main.py```
 
+## TO DO
+How To Use Software
+How Is Software Implemented
+
 ## Articles Used
 1. https://www.who.int/news-room/fact-sheets/detail/healthy-diet
 2. https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eight-tips-for-healthy-eating/

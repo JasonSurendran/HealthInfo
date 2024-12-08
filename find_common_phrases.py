@@ -124,8 +124,8 @@ def save_similarity_results(results, output_file):
 
 def run():
     directory = "./documents_filtered"
-    words_output_file = "common_words_filtered.txt"
-    similarity_output_file = "document_similarity.txt"
+    words_output_file = "output_files/common_words_filtered.txt"
+    similarity_output_file = "output_files/document_similarity.txt"
 
     # Load documents and find common words and similarity
     documents = load_documents(directory)
