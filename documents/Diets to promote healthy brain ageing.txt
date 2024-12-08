@@ -1,0 +1,13 @@
+Abstract
+Diet is a modifiable lifestyle factor with a proven role in cardiovascular disease risk reduction that might also play an important part in cognitive health. Evidence from observational studies has linked certain healthy dietary patterns to cognitive benefits. However, clinical trials of diet interventions have demonstrated either null or, at best, small effects on cognitive outcomes. In this Review, we summarize the currently available evidence from observational epidemiology and clinical trials regarding the potential role of diet in the prevention of cognitive decline and dementia. We further discuss possible methodological limitations that might have hindered the ability of previous diet intervention trials to capture potential neuroprotective effects. Considering the overwhelming and continuously expanding societal, economic and health-care burden of Alzheimer disease and other dementias, future nutritional research must address past methodological challenges to accurately and reliably inform clinical practice guidelines and public health policies. Within this scope, we provide a roadmap for future diet intervention trials for dementia prevention. We discuss study designs involving both intensive personalized interventions — to evaluate pharmacokinetic and pharmacodynamic properties, establish neuroprotective thresholds, and test hypothesized biological mechanisms and effects on brain health and cognition through sensitive and precise biomarker measures — and large-scale, pragmatic public health interventions to study population-level benefits.
+
+Key points
+Considering the rising prevalence of dementia in the ageing population, effective strategies to promote healthy brain ageing and reduce dementia risk are a crucial public health priority.
+
+Diet is a modifiable lifestyle factor that may have an important role in cognitive health maintenance through pathways involving neurodegeneration, vascular health, energy metabolism, inflammation, epigenetics and other biological mechanisms.
+
+Although observational studies suggest that adherence to certain healthy dietary patterns can protect against cognitive decline and dementia, randomized controlled trials have failed to robustly and consistently support these findings.
+
+Several aspects of study design, such as participant selection criteria, intervention choice, intensity and duration, and cognitive outcome selection, might have hindered the ability of previous diet intervention trials to capture cognitive effects.
+
+Strategies to overcome past roadblocks could involve leveraging both traditional population science tools and new and innovative biomarker measures within a precision or personalized medicine framework.

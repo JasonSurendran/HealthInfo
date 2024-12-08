@@ -1,6 +1,7 @@
 import os
 import math
 from collections import Counter
+import shutil
 
 class BM25:
     def __init__(self, documents, k1=1.5, b=0.75):
@@ -91,9 +92,8 @@ def copy_relevant_documents(filenames, scores, threshold, src_dir, dest_dir):
             dest_path = os.path.join(dest_dir, filename)
             shutil.copy(src_path, dest_path)
             print(f"Copied: {filename} with score {score:.4f}")
-            
-# Example Usage
-if __name__ == "__main__":
+
+def run():
     # Directories
     src_directory = "./documents"
     dest_directory = "./documents_filtered"
@@ -111,7 +111,7 @@ if __name__ == "__main__":
     scores = bm25.compute_bm25(query)
 
     # Threshold for filtering
-    threshold = 2.0
+    threshold = 1.5
 
     # Rank documents
     ranked_docs = sorted(zip(scores, filenames, documents), reverse=True, key=lambda x: x[0])
