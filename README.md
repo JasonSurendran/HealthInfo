@@ -33,7 +33,7 @@ Contains the documents from the documents folder that have passed the BM25 thres
 Contains all output reference files. Specifically it contains the common_words_filtered.txt file outputted by the find_common_phrases.py file, the document_similarity.txt file also from the find_common_phrases.py script, and the ndcg_score.txt file created by the select_articles.py script.
 
 ## Scripts
-display_dashboard.py
+### display_dashboard.py
 
 Dependencies: dash, pandas
 1. Dashboard Setup: Dash is used to create an interactive web application. A dropdown menu lists all document pairs, allowing users to select one and view the results.
@@ -43,7 +43,8 @@ Dependencies: dash, pandas
 5. Dropdown for Display Limit: The dropdown allows users to choose how many top phrases to display (e.g., Top 10, Top 20).
 6. Dashboard Display: Displays the top-ranked phrases and their frequencies in a list.
 
-find_common_phrases.py
+
+### find_common_phrases.py
 
 Dependencies: os, re, collections, sklearn
 1. Data Processing: 
@@ -56,11 +57,13 @@ Dependencies: os, re, collections, sklearn
 	a. The save_common_words_to_file function writes each word and its frequency into a text file called common_words_filtered. 
 	b. The document similarity is written to the document_similarity.txt file.
 	
-main.py
+
+### main.py
 
 Used as the main function which the user executes. It imports in the other three python scripts (display_dashboard, select_articles, find_common_phrases) and runs them in order. It also allows a user to pass custom folder paths for the program to use if they don't want to use the default options
 
-select_articles.py: 
+
+### select_articles.py: 
 
 Dependencies: os, math, collections, shutil
 1. Initialization: The BM25 class initializes with a list of documents and calculates document frequencies for all unique terms.
