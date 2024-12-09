@@ -34,6 +34,7 @@ Contains all output reference files. Specifically it contains the common_words_f
 
 ## Scripts
 display_dashboard.py
+
 Dependencies: dash, pandas
 1. Dashboard Setup: Dash is used to create an interactive web application. A dropdown menu lists all document pairs, allowing users to select one and view the results.
 2. Interactivity: The @app.callback function updates the output (common phrases and cosine similarity) when a document pair is selected.
@@ -43,6 +44,7 @@ Dependencies: dash, pandas
 6. Dashboard Display: Displays the top-ranked phrases and their frequencies in a list.
 
 find_common_phrases.py
+
 Dependencies: os, re, collections, sklearn
 1. Data Processing: 
 	a. ```load_documents```: Reads .txt files from the documents_filtered folder.
@@ -55,9 +57,11 @@ Dependencies: os, re, collections, sklearn
 	b. The document similarity is written to the document_similarity.txt file.
 	
 main.py
+
 Used as the main function which the user executes. It imports in the other three python scripts (display_dashboard, select_articles, find_common_phrases) and runs them in order. It also allows a user to pass custom folder paths for the program to use if they don't want to use the default options
 
-select_articles.py
+select_articles.py: 
+
 Dependencies: os, math, collections, shutil
 1. Initialization: The BM25 class initializes with a list of documents and calculates document frequencies for all unique terms.
 2. IDF Calculation: The IDF component ensures that terms that occur in fewer documents are weighted higher.
