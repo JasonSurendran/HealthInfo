@@ -128,7 +128,7 @@ def run(src_directory, dest_directory):
     query = ["diet", "exercise", "health"]
 
     # User-provided relevance scores (example: ground truth relevance for each document)
-    relevance_scores = [10, 8, 6, 5, 3]  # Adjust this to reflect actual relevance of documents
+    relevance_scores = [10, 8, 6, 5, 3, 10, 8, 6, 5, 3, 10, 8, 6, 5, 3]  # Adjust this to reflect actual relevance of documents
 
     # Initialize BM25
     bm25 = BM25(documents)
