@@ -50,7 +50,9 @@ Dependencies: os, re, collections, sklearn
 2. Single-Word Focus: 
 	a. Updated extract_common_words to handle individual words only. 
 	b. It uses Counter objects to find word frequencies and their intersection between documents.
-3. Updated File Saving: The save_common_words_to_file function writes each word and its frequency into a text file.
+3. Updated File Saving: 
+	a. The save_common_words_to_file function writes each word and its frequency into a text file called common_words_filtered. 
+	b. The document similarity is written to the document_similarity.txt file.
 	
 main.py
 Used as the main function which the user executes. It imports in the other three python scripts (display_dashboard, select_articles, find_common_phrases) and runs them in order. It also allows a user to pass custom folder paths for the program to use if they don't want to use the default options

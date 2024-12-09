@@ -4,9 +4,6 @@ import pandas as pd
 
 # Load common words and their frequencies
 def load_common_words(input_file):
-    """
-    Load common words and their frequencies from a text file into a DataFrame.
-    """
     words = []
     with open(input_file, 'r', encoding='utf-8') as file:
         for line in file:
@@ -17,9 +14,6 @@ def load_common_words(input_file):
 
 # Load document similarity results
 def load_similarity_results(input_file):
-    """
-    Load document similarity results from a text file into a DataFrame.
-    """
     similarities = []
     with open(input_file, 'r', encoding='utf-8') as file:
         for line in file:
@@ -85,7 +79,6 @@ def run(common_words_file, similarity_file):
         [dash.dependencies.Input("num-words-dropdown", "value")]
     )
     def update_common_words(num_words):
-        # Select top `num_words` words
         top_words = common_words_df.head(num_words)
         return html.Table(
             children=[

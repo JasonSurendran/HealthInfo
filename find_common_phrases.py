@@ -22,9 +22,6 @@ COMMON_WORDS = {
 
 
 def load_documents(directory):
-    """
-    Load all .txt documents from the specified directory.
-    """
     documents = {}
     for filename in os.listdir(directory):
         if filename.endswith(".txt"):
@@ -34,16 +31,10 @@ def load_documents(directory):
 
 
 def preprocess_text(text):
-    """
-    Preprocess the text by converting to lowercase and removing special characters.
-    """
     return re.sub(r'[^a-z0-9\s]', '', text)
 
 
 def extract_common_words(doc1, doc2):
-    """
-    Find common individual words between two documents.
-    """
     # Tokenize and count word frequencies in both documents
     words1 = Counter(doc1.split())
     words2 = Counter(doc2.split())
@@ -54,16 +45,10 @@ def extract_common_words(doc1, doc2):
 
 
 def filter_common_words(word_counts):
-    """
-    Filter out the top 100 most common English words.
-    """
     return {word: count for word, count in word_counts.items() if word not in COMMON_WORDS}
 
 
 def calculate_cosine_similarity(doc1, doc2):
-    """
-    Calculate cosine similarity between two documents.
-    """
     vectorizer = CountVectorizer()
     vectors = vectorizer.fit_transform([doc1, doc2])
     similarity = cosine_similarity(vectors)[0][1]
@@ -71,9 +56,6 @@ def calculate_cosine_similarity(doc1, doc2):
 
 
 def find_common_words_and_similarity(documents):
-    """
-    Find common individual words and calculate cosine similarity across all document pairs.
-    """
     filenames = list(documents.keys())
     results = []
     all_words = Counter()
@@ -105,18 +87,12 @@ def find_common_words_and_similarity(documents):
 
 
 def save_common_words_to_file(common_words, output_file):
-    """
-    Save the common words to a text file.
-    """
     with open(output_file, 'w', encoding='utf-8') as file:
         for word, freq in common_words:
             file.write(f"{word}\t{freq}\n")
 
 
 def save_similarity_results(results, output_file):
-    """
-    Save document similarity results to a file.
-    """
     with open(output_file, 'w', encoding='utf-8') as file:
         for result in results:
             file.write(f"{result['Document 1']} - {result['Document 2']}: {result['Cosine Similarity']:.4f}\n")
@@ -130,6 +106,3 @@ def run(directory, words_output_file, similarity_output_file):
     # Save the filtered common words and similarity results
     save_common_words_to_file(common_words_ranked, words_output_file)
     save_similarity_results(similarity_results, similarity_output_file)
-
-    print(f"Filtered common words saved to {words_output_file}.")
-    print(f"Document similarity results saved to {similarity_output_file}.")
