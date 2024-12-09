@@ -20,17 +20,24 @@
 2. All output files are added to 'output_files' folder for reference.
 2. Navigate over to http://127.0.0.1:8050/ to see dashboard
 
+
 # How Is Software Implemented
 
 ## Folders
-./documents
+### ./documents
+
 Contains all articles that will be used in the program, in a txt format. Currently contains 15 articles that can be referenced in the last section of the README.md. If a user wants to add additional article, they just need to make a new text file, they add it here. This folder is used by the select_articles.py script.
 
-./documents_filtered
-Contains the documents from the documents folder that have passed the BM25 threshold filter. These documents will then be used by the find_common_phrases.py script.
 
-./output_files
+### ./documents_filtered
+
+Contains the documents from the documents folder that have passed the BM25 threshold filter. These documents will then be used by the find_common_phrases.py script.
+ 
+
+### ./output_files
+
 Contains all output reference files. Specifically it contains the common_words_filtered.txt file outputted by the find_common_phrases.py file, the document_similarity.txt file also from the find_common_phrases.py script, and the ndcg_score.txt file created by the select_articles.py script.
+
 
 ## Scripts
 ### display_dashboard.py
