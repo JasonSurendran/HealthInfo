@@ -1,5 +1,8 @@
 # How To Use Software
 
+## Video Walkthrough
+https://mediaspace.illinois.edu/media/t/1_yxmcmxzx
+
 ## Install Dependencies
 1.  Create a virtual environment with 
 ```python -m venv myenv  # Replace "myenv" with your desired environment name```
